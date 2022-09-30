@@ -1,5 +1,3 @@
-
-
 import os
 from pathlib import Path
 
@@ -14,9 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-35ql()ye59@bffk7y(ra5!yf#!*a(n9e(4)i6(etzu*ysb)ilw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -66,16 +62,7 @@ WSGI_APPLICATION = 'gestion_paquetes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'paquetes',
-        'USER': 'postgres',
-        'PASSWORD': 'Tascon1234W',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+
 
 
 # Password validation
