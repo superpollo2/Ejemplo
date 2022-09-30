@@ -27,7 +27,7 @@ body{
 nav{
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color:  rgb(41, 41, 41);
     height:4em;
 }
 
@@ -45,7 +45,7 @@ footer{
     align-items: center;
     align-content: center;
     justify-items: center;
-    background-color: black;
+    background-color: rgb(41, 41, 41);
     height:10vh;
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
