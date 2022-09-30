@@ -1,9 +1,9 @@
 from django.db import models
-from django.forms import CharField
 
-class Municipio(models.Model):
-    pos_code = models.CharField(max_length=10, primary_key=True)
-    municipio = models.CharField(max_length=20, blank=False)
+    
+class Departamento(models.Model):
+    id_departamento = models.CharField(max_length=10, primary_key=True,null=False)
+    departament = models.CharField(max_length=20, blank=False, null=False)
     
 
 class Address (models.Model):
@@ -12,9 +12,10 @@ class Address (models.Model):
     neighborhood = models.CharField(max_length=100, blank=False, null=False)
     
 class Location(models.Model):
-    id_location = models.CharField(max_length=100, blank=False, null=False, primary_key=True)
-    departamento = models.OneToOneField(Municipio, on_delete=models.CASCADE)
+    pos_code = models.CharField(max_length=100, null= False)
+    departamento= models.ForeignKey(Departamento,on_delete=models.CASCADE)
     address = models.ForeignKey(Address, on_delete = models.CASCADE)
+    municipio = models.CharField(max_length=100, blank=False, null=False)
     
 class User(models.Model):
     identify = models.CharField(max_length=50, blank=False, null=False, primary_key=True)
@@ -25,11 +26,16 @@ class User(models.Model):
 class Type (models.Model):
     id_type= models.CharField(max_length=4, blank=False, null=False, primary_key=True) 
     type = models.CharField(max_length=20, blank=False, null=False) 
-    
+ 
+class Date(models.Model):
+    date = models.DateField(primary_key=True)
+        
 class State(models.Model):
     id_state= models.CharField(max_length=4, blank=False, null=False, primary_key=True) 
     state = models.CharField(max_length=20, blank=False, null=False) 
-    date = models.DateField()    
+    date = models.ManyToManyField(Date)
+    
+
     
 class Package(models.Model):
      id_package = models.CharField(max_length=255, blank=False, null=False, primary_key=True)
@@ -40,7 +46,7 @@ class Package(models.Model):
     
 class ShippingOrder(models.Model):
     id_shipping = models.CharField(max_length=255, blank=False, null=False,primary_key=True)
-    date = models.DateField(null=False)
+    date = models.ForeignKey(Date, on_delete = models.CASCADE)
     sender = models.ForeignKey(User, on_delete = models.CASCADE,related_name='remitente')
     addressee = models.ForeignKey(User, on_delete = models.CASCADE, related_name='destinatario')
     location = models.ForeignKey(Location, on_delete = models.CASCADE)

@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css/styleBasic.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    {%block head%}{%endblock%}
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body >
+    <nav> 
+        <a href="{%url 'index'%}"><img src="{% static 'assets/🦆 icon _home.png'%}" alt="menu" class="icon-home"></a>
+        <img src="{% static 'assets/quickFind.png'%}" alt="" class="logo-nav">     
+    </nav>
+          
+    <main class="content-body">
+        {%block content%}{%endblock%}
+    </main>
+    
+
+    <footer>
+        <img src="{%static 'assets/govco.png'%}" alt="">
+        <span>MIN TIC siclo 3 2022</span>
+        <img src="{%static 'assets/marca_colombia.png'%}" alt="">
+    </footer>
+
+</body>
+</html>

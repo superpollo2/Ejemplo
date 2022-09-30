@@ -1,0 +1,30 @@
+
+{% extends './layout/base.html'%}
+{%load static%}
+
+    
+{%block head%}
+<link rel="stylesheet" href="{% static 'css/index.css'%}">
+{%endblock%}
+
+{%block title%}Index{%endblock%}
+
+{%block content%}
+<section class="container-manu">
+    
+    <section class="contain-menu--titles">
+        <img src="{% static 'assets/logoquick.png'%}" alt="">
+        <span>The quickes way to registrer, find and track a Package</span>
+        <h1>COMIENZA AQUÍ</h1>
+    </section>
+    
+    <section class="contain-manu--btn">
+        <a href="{%url 'new-shipping'%}">Nuevo envio</a>
+        <a href="{%url 'shipping-crud'%}">Envios</a>
+        <a href="{%url 'trazabilidad'%}">Trazabilidad</a>
+        <a href="{%url 'user-crud'%}">Usuarios</a>
+    </section>
+</section>
+
+
+{%endblock%}
