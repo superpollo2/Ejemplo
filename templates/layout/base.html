@@ -10,13 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     {%block head%}{%endblock%}
-    <title>{%block title%}{%endblock%}</title>
+    <title>Gestor de paquetes | {%block title%}{%endblock%}</title>
 </head>
 <body >
-    <nav> 
-        <a href="{%url 'index'%}"><img src="{% static 'assets/🦆 icon _home.png'%}" alt="menu" class="icon-home"></a>
-        <img src="{% static 'assets/quickFind.png'%}" alt="" class="logo-nav">     
-    </nav>
+    {%include 'layout/partials/nav.html'%}
           
     <main class="content-body">
         {%block content%}{%endblock%}

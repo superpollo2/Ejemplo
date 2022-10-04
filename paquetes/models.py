@@ -1,5 +1,6 @@
-from django.db import models
 
+from django.db import models
+from datetime import date
     
 class Departamento(models.Model):
     id_departamento = models.CharField(max_length=10, primary_key=True,null=False)
@@ -9,8 +10,7 @@ class Departamento(models.Model):
         return self.id_departamento
 
 class Address (models.Model):
-    id_address = models.CharField(max_length=100, primary_key=True)
-    address = models.CharField(max_length=100, blank=False, null=False )
+    address = models.CharField(max_length=100, blank=False, null=False, primary_key=True )
     neighborhood = models.CharField(max_length=100, blank=False, null=False)
     
     def __str__(self):
@@ -43,10 +43,10 @@ class Type (models.Model):
         return self.id_type
  
 class Date(models.Model):
-    date = models.DateField(primary_key=True)
+    date = models.DateField(primary_key=True,default =date.today)
     
     def __str__(self):
-        return self.date
+        return str(self.date)
         
 class State(models.Model):
     id_state= models.CharField(max_length=4, blank=False, null=False, primary_key=True) 
